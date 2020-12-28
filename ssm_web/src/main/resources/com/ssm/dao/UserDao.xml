@@ -5,12 +5,12 @@
 <mapper namespace="com.ssm.dao.UserDao">
 
     <!--查询所有-->
-    <select id="findAll" resultType="User">
+    <select id="findAll" resultType="com.ssm.domain.User">
         select * from user
     </select>
 
     <!--新增用户-->
-    <insert id="save" parameterType="User">
+    <insert id="save" parameterType="com.ssm.domain.User">
         insert into user(username) values(#{username})
     </insert>
 
