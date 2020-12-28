@@ -5,6 +5,7 @@ import com.ssm.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.servlet.ModelAndView;
 
 import java.util.List;
 
@@ -20,13 +21,22 @@ public class UserController {
     @Autowired
     private UserService userService;
 
+    @RequestMapping("saveUser")
+    public String saveUser(User user) {
+        userService.save(user);
+        return "redirect:findAllUser";
+    }
+
     /**
      * 查询所有用户
      * @return
      */
     @RequestMapping("findAllUser")
-    public String findAllUser() {
-        System.out.println("查询了所有的用户");
-        return "success";
+    public ModelAndView findAllUser() {
+        List<User> userList = userService.findAll();
+        ModelAndView mv = new ModelAndView();
+        mv.addObject("userList", userList);
+        mv.setViewName("userList");
+        return mv;
     }
 }

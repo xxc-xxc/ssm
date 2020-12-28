@@ -12,5 +12,10 @@
 </head>
 <body>
     <a href="user/findAllUser">查询所有用户</a>
+    <hr/>
+    <form action="/user/saveUser" method="post">
+       用户名：<input type="text" name="username"><br>
+        <input type="submit" value="保存">
+    </form>
 </body>
 </html>
