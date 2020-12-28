@@ -1,13 +1,15 @@
-package com.ssm.dao;
+package com.ssm.service;
 
 import com.ssm.domain.User;
 
 import java.util.List;
 
 /**
- * 用户持久层接口
+ * @Author xxc
+ * @Date 2020/12/28 15:06
+ * @Description User业务层接口
  */
-public interface UserDao {
+public interface UserService {
 
     /**
      * 保存用户
@@ -17,8 +19,8 @@ public interface UserDao {
     int save(User user);
 
     /**
-     * 查询所有用户
-     * @return 返回所有的用户数据
+     * 查找所有用户
+     * @return 返回所有用户数据
      */
     List<User> findAll();
 
