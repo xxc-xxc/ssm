@@ -5,6 +5,7 @@
 <web-app>
   <display-name>ssm_web</display-name>
 
+  <!--手动指定Spring配置文件位置-->
   <context-param>
     <param-name>contextConfigLocation</param-name>
     <param-value>classpath:applicationContext.xml</param-value>
@@ -28,7 +29,10 @@
     <url-pattern>/*</url-pattern>
   </filter-mapping>
 
-  <!--配置监听器实现启动服务创建容器-->
+  <!--
+    配置监听器实现启动服务创建容器。
+    该监听器只能加载WEB-INF目录中名为applicationContext.xml的配置文件
+  -->
   <listener>
     <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
   </listener>

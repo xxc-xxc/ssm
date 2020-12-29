@@ -33,6 +33,7 @@ public class UserController {
      */
     @RequestMapping("findAllUser")
     public ModelAndView findAllUser() {
+//        System.out.println("成功查询所有用户");
         List<User> userList = userService.findAll();
         ModelAndView mv = new ModelAndView();
         mv.addObject("userList", userList);
